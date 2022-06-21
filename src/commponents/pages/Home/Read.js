@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useDispatch } from "react-redux";
 import { pre_get_data } from "../../../redux/action/action";
 import { useSelector } from "react-redux/es/exports";
+import Link from 'react-router-dom'
 
 function Read() {
   const dispatch = useDispatch()
@@ -19,6 +20,7 @@ useEffect(() => {
       <div style={{display:'flex',justifyContent:'center',width:500,height:'480px'}}>
         
         {pro.map(single => (
+           <Link>
             <div key={single.id} className="card">
             <img src={single.product_image} className="card-img-top" alt="..." height={'255px'} />
             <div className="card-body">
@@ -29,6 +31,7 @@ useEffect(() => {
             
             </div>
           </div>
+           </Link>
         ))}
       </div>
     </div>
